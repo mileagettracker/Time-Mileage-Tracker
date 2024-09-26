@@ -4,3 +4,5 @@ The Time Mileage Tracker with GPS is a mobile app that enables all employers to 
 ## Specifications
 Mobile mileage tracker app development using Python in Django framework. 
 Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. It is a free and open-source, Python-based web framework. It is maintained by the Django Software Foundation.
+## Documentation
+Check out our requirements and design documentation [here](https://github.com/mileagettracker/Time-Mileage-Tracker/tree/main/Documentation).
