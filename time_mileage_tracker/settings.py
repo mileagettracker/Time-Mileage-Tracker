@@ -57,8 +57,8 @@ ROOT_URLCONF = 'time_mileage_tracker.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [BASE_DIR / 'templates'],  # Make sure this points to your global template directory, if you have one
+        'APP_DIRS': True,  # Ensure this is True so Django looks for app-level templates
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -118,7 +118,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+# URL to use when referring to static files (CSS, JavaScript, images)
+STATIC_URL = '/static/'
+
+# Additional locations the staticfiles app will traverse
+STATICFILES_DIRS = [BASE_DIR / "static"]  # This includes your project-level 'static/' directory
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
