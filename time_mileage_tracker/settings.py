@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -32,12 +32,15 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # Other apps...
+    #'channels'
+    'users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',  # Ensure this appears only once
+    #'tracker'
     # Your custom apps...
 ]
 
@@ -57,8 +60,9 @@ ROOT_URLCONF = 'time_mileage_tracker.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],  # Make sure this points to your global template directory, if you have one
-        'APP_DIRS': True,  # Ensure this is True so Django looks for app-level templates
+        #'DIRS': [BASE_DIR / 'templates', 'templates'],  #
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'APP_DIRS': True,  #
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -71,7 +75,9 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'time_mileage_tracker.wsgi.application'
+ASGI_APPLICATION = 'mileage_tracker_project.asgi.application'  # For Channels
 
+# Database
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -81,6 +87,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+# Channels Layer Configuration (In-memory channel layer for development)
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+    },
 }
 
 
@@ -128,3 +141,5 @@ STATICFILES_DIRS = [BASE_DIR / "static"]  # This includes your project-level 'st
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

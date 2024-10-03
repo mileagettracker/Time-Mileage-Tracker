@@ -9,5 +9,6 @@ def index_view(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('users.urls')),
+    #path('', include('users.urls')),
     path('', index_view, name='index'),  # Root URL points to the index view
 ]
