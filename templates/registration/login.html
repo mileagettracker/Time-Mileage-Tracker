@@ -1,27 +1,36 @@
 {% extends 'base.html' %}
-
 {% block title %}Login{% endblock %}
+{% block page_title %}Login{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card mt-5">
-                <div class="card-header text-center">
-                    <h2>Login</h2>
+<div class="container min-vh-100 d-flex align-items-center justify-content-center">
+    <div class="card shadow-lg">
+        <div class="card-header bg-gradient-primary text-white text-center">
+            <h4 class="font-weight-bolder">Sign in</h4>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <label>
+                        <input type="text" name="username" class="form-control">
+                    </label>
                 </div>
-                <div class="card-body">
-                    {% load widget_tweaks %}
-
-                       <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}  <!-- This renders the form fields: username, password -->
-        <button type="submit">Login</button>
-    </form>
-           <p><a href="/password_reset/">Forgot Password</a> </p>
-
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <label>
+                        <input type="password" name="password" class="form-control">
+                    </label>
                 </div>
-            </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn bg-gradient-primary">Sign in</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
