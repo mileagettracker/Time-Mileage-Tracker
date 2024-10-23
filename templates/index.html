@@ -25,27 +25,17 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link rel="apple-touch-icon" sizes="76x76" href="../static/assets/img/apple-icon.png">
-<link rel="icon" type="image/png" href="../static/assets/img/favicon.png">
-
-<title>
-  
-   Material Dashboard 2  by Creative Tim
-  
-
-  
-
-  
-</title>
-
+<link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/img/apple-icon.png' %}">
+<link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
 
 
 <!--     Fonts and icons     -->
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
 
+
 <!-- Nucleo Icons -->
-<link href="../static/assets/css/nucleo-icons.css" rel="stylesheet" />
-<link href="../static/assets/css/nucleo-svg.css" rel="stylesheet" />
+<link href="{% static 'assets/css/nucleo-icons.css' %}" rel="stylesheet" />
+<link href="{% static 'assets/css/nucleo-svg.css' %}" rel="stylesheet" />
 
 <!-- Font Awesome Icons -->
 <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
@@ -54,10 +44,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 
 <!-- CSS Files -->
-
-
-
-<link id="pagestyle" href="../static/assets/css/material-dashboard.css?v=3.1.0" rel="stylesheet" />
+<link id="pagestyle" href="{% static 'assets/css/material-dashboard.css?v=3.1.0' %}" rel="stylesheet" />
 
 
 
@@ -101,71 +88,30 @@
   
 <li class="nav-item">
   <a class="nav-link text-white " href="../material-dashboard-master/pages/dashboard.html">
-    
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-        <i class="material-icons opacity-10">dashboard</i>
+        <i class="material-icons opacity-10">Dashboard</i>
       </div>
-    
     <span class="nav-link-text ms-1">Dashboard</span>
   </a>
 </li>
 
   
 <li class="nav-item">
-  <a class="nav-link text-white " href="../material-dashboard-master/pages/tables.html">
-    
+  <a class="nav-link text-white " href="../material-dashboard-master/pages/reports.html">
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-        <i class="material-icons opacity-10">table_view</i>
-      </div>
-    
-    <span class="nav-link-text ms-1">Tables</span>
+              <i class="material-icons opacity-10">receipt_long</i>
+            </div>
+    <span class="nav-link-text ms-1">Reports</span>
   </a>
 </li>
 
-  
-<li class="nav-item">
-  <a class="nav-link text-white " href="../material-dashboard-master/pages/billing.html">
-    
-      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-        <i class="material-icons opacity-10">receipt_long</i>
-      </div>
-    
-    <span class="nav-link-text ms-1">Billing</span>
-  </a>
-</li>
-
-  
-<li class="nav-item">
-  <a class="nav-link text-white " href="../material-dashboard-master/pages/virtual-reality.html">
-    
-      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-        <i class="material-icons opacity-10">view_in_ar</i>
-      </div>
-    
-    <span class="nav-link-text ms-1">Virtual Reality</span>
-  </a>
-</li>
-
-  
-<li class="nav-item">
-  <a class="nav-link text-white " href="../material-dashboard-master/pages/rtl.html">
-    
-      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-        <i class="material-icons opacity-10">format_textdirection_r_to_l</i>
-      </div>
-    
-    <span class="nav-link-text ms-1">RTL</span>
-  </a>
-</li>
 
   
 <li class="nav-item">
   <a class="nav-link text-white " href="../material-dashboard-master/pages/notifications.html">
-    
-      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-        <i class="material-icons opacity-10">notifications</i>
-      </div>
-    
+    <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">notifications</i>
+            </div>
     <span class="nav-link-text ms-1">Notifications</span>
   </a>
 </li>
@@ -177,11 +123,9 @@
   
 <li class="nav-item">
   <a class="nav-link text-white " href="../material-dashboard-master/pages/profile.html">
-    
-      <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-        <i class="material-icons opacity-10">person</i>
-      </div>
-    
+        <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+          <i class="material-icons opacity-10">person</i>
+        </div>
     <span class="nav-link-text ms-1">Profile</span>
   </a>
 </li>
@@ -209,22 +153,8 @@
     <span class="nav-link-text ms-1">Sign Up</span>
   </a>
 </li>
-
-
-
-          
-
-        
       
     </ul>
-  </div>
-  
-  <div class="sidenav-footer position-absolute w-100 bottom-0 ">
-    <div class="mx-3">
-      <a class="btn btn-outline-primary mt-4 w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard?ref=sidebarfree" type="button">Documentation</a>
-      <a class="btn bg-gradient-primary w-100" href="https://www.creative-tim.com/product/material-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
-    </div>
-    
   </div>
   
 </aside>
@@ -699,39 +629,6 @@
 </div>
 
 
-                <footer class="footer py-4  ">
-  <div class="container-fluid">
-    <div class="row align-items-center justify-content-lg-between">
-      <div class="col-lg-6 mb-lg-0 mb-4">
-        <div class="copyright text-center text-sm text-muted text-lg-start">
-          © <script>
-            document.write(new Date().getFullYear())
-          </script>,
-          made with <i class="fa fa-heart"></i> by
-          <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-          for a better web.
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-          <li class="nav-item">
-            <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-          </li>
-          <li class="nav-item">
-            <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
-
             </div>
 
          
@@ -945,7 +842,8 @@
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 
 
-<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc --><script src="../static/assets/js/material-dashboard.min.js?v=3.1.0"></script>
+<!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+      <script src="../static/assets/js/material-dashboard.min.js?v=3.1.0"></script>
   </body>
 
 </html>
