@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure-93x@)w(wnc22s)i74n)44ttt)kri7cr6m76tfoosu)wv%^ttx#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.139', 'localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'time_mileage_tracker',
     'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',
