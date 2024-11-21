@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Route Planner</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDO6qF6APLUNJlybA-qwFnlkQmCeCLq9g&libraries=places"></script>
+
+</head>
+<body>
+    <h1>Route Planner</h1>
+    <form id="routeForm" method="post">
+        {% csrf_token %}
+        <label for="current_location">Current Location:</label>
+        <input type="text" id="current_location" name="current_location" placeholder="Automatically detected" readonly>
+        <input type="hidden" id="distance" name="distance">
+        <input type="hidden" id="duration" name="duration">
+
+        <label for="destination">Enter Destination:</label>
+        <input type="text" id="destination" name="destination" placeholder="Enter your destination" required>
+
+        <button type="button" onclick="calculateAndSubmit()">Navigate</button>
+    </form>
+</body>
+<script>
+    let currentCoords = {}; // Store user's current location
+    let currentLocationInput = document.getElementById('current_location');
+    let destinationInput = document.getElementById('destination');
+  // Initialize Google Places Autocomplete for destination
+    let autocomplete = new google.maps.places.Autocomplete(destinationInput);
+    const directionsService = new google.maps.DirectionsService();
+    // Automatically detect the user's current location
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                currentCoords = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude,
+                };
+
+                const geocoder = new google.maps.Geocoder();
+                const latLng = new google.maps.LatLng(currentCoords.lat, currentCoords.lng);
+
+                geocoder.geocode({ location: latLng }, (results, status) => {
+                    if (status === "OK" && results[0]) {
+                        document.getElementById("current_location").value = results[0].formatted_address;
+                    } else {
+                        document.getElementById("current_location").value = "Unable to detect address.";
+                    }
+                });
+            },
+            () => {
+                alert("Unable to retrieve location. Please ensure location services are enabled.");
+            }
+        );
+    } else {
+        alert("Geolocation is not supported by your browser.");
+    }
+     // Calculate route and submit the form
+    function calculateAndSubmit() {
+        const destination = document.getElementById("destination").value;
+
+        if (!currentCoords.lat || !currentCoords.lng) {
+            alert("Current location not available.");
+            return;
+        }
+
+        if (!destination) {
+            alert("Please enter a destination.");
+            return;
+        }
+
+        directionsService.route(
+            {
+                origin: currentCoords,
+                destination: destination,
+                travelMode: "DRIVING",
+            },
+            (response, status) => {
+                if (status === "OK") {
+                    const route = response.routes[0].legs[0];
+                    const distance = (route.distance.value / 1000).toFixed(2); // Convert meters to kilometers
+                    const duration = (route.duration.value / 60).toFixed(2); // Convert seconds to minutes
+                    // Populate the hidden form fields
+                    document.getElementById("distance").value = distance;
+                    document.getElementById("duration").value = duration;
+
+                    // Submit the form
+                    document.getElementById("routeForm").submit();
+                } else {
+                    alert("Directions request failed: " + status);
+                }
+            }
+        );
+        openGoogleMaps()
+    }
+    // Open Google Maps with the route
+    function openGoogleMaps() {
+        const destination = document.getElementById("destination").value;
+
+        if (!currentCoords.lat || !currentCoords.lng) {
+            alert("Current location not available.");
+            return;
+        }
+
+        if (!destination) {
+            alert("Please enter a destination.");
+            return;
+        }
+
+        const mapsUrl = `https://www.google.com/maps/dir/?api=1&origin=${currentCoords.lat},${currentCoords.lng}&destination=${encodeURIComponent(destination)}&travelmode=driving`;
+
+        // Open the URL in a new tab or app
+        window.open(mapsUrl, "_blank");
+    }
+</script>
+</html>
