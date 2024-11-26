@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edb232aa-7593-422c-b47d-50b869203597" name="Changes" comment="Added dashboard template and login page">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/28ac4116-d238-4e9c-bd8c-27c3f9a4cdc0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/28ac4116-d238-4e9c-bd8c-27c3f9a4cdc0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/28ac4116-d238-4e9c-bd8c-27c3f9a4cdc0/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/28ac4116-d238-4e9c-bd8c-27c3f9a4cdc0/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/css/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/assets/css/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/time_mileage_tracker/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/time_mileage_tracker/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/time_mileage_tracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/time_mileage_tracker/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/time_mileage_tracker/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/time_mileage_tracker/views.py" afterDir="false" />
     </list>
@@ -71,25 +71,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-Vcs Important Messages&quot;: &quot;VCS important messages&quot;,
-    &quot;Notification.DoNotAsk-Vcs Important Messages&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;requests&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/parthpatel/PycharmProjects/Time-Mileage-Tracker/templates/registration&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Notification.DisplayName-DoNotAsk-Vcs Important Messages": "VCS important messages",
+    "Notification.DoNotAsk-Vcs Important Messages": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Parth2.0",
+    "last_opened_file_path": "/Users/parthpatel/PycharmProjects/Time-Mileage-Tracker/templates/registration",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "sqlite"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/templates/registration" />
@@ -211,6 +216,7 @@
       <workItem from="1731440279424" duration="92000" />
       <workItem from="1731440385250" duration="23547000" />
       <workItem from="1732654053627" duration="4000" />
+      <workItem from="1732658478577" duration="1888000" />
     </task>
     <task id="LOCAL-00001" summary="Added dashboard template and login page">
       <option name="closed" value="true" />

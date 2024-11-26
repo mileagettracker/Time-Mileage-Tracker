@@ -22,6 +22,7 @@ urlpatterns = [
 
     path('login/', LoginView.as_view(), name='login'),
     path('signup/', views.signup_view, name='signup'),
+    path('route/', views.route_view, name='route.html'),
 
     path('password_reset/', auth_views.PasswordResetView.as_view(), name='password_reset'),
     path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),

@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'time_mileage_tracker',
     'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',
