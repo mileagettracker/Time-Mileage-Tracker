@@ -3,8 +3,10 @@ from django.contrib.auth import login, logout
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from .forms import CustomUserCreationForm
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 # def profile_view(request):
 #     return render(request, 'profile.html')  # Assuming you have a profile.html template
@@ -37,3 +39,22 @@ def logout_view(request):
 
 def home_view(request):
     return render(request, 'dashboard.html')  # Replace with your actual template
+
+@login_required
+def user_view(request):
+    username = request.user.username
+    return render(request, 'user_profile.html', {'username': username})
+
+def signup_view(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.first_name = form.cleaned_data.get('first_name')
+            user.last_name = form.cleaned_data.get('last_name')
+            user.save()
+            login(request, user)
+            return redirect('login')
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'registration/signup.html', {'form': form})

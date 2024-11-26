@@ -7,3 +7,7 @@ body {
 h1 {
     color: #333;
 }
+
+.hidden-label {
+    display: none;
+}
