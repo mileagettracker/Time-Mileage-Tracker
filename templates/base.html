@@ -1,37 +1,50 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Default Title{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/stylesheet.css' %}">
+    <title>{% block title %}Time Mileage Tracker{% endblock %}</title>
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'assets/img/apple-icon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+    <link href="{% static 'assets/css/material-dashboard.css' %}" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/perfect-scrollbar/1.5.0/css/perfect-scrollbar.min.css" rel="stylesheet" />
+    <link id="pagestyle" href="{% static 'assets/css/material-dashboard.css?v=3.1.0' %}" rel="stylesheet" />
+
+
 </head>
-<body>
 
-    <!-- Navigation Bar -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/accounts/login/">Login</a></li>
-                <li><a href="/dashboard/">Dashboard</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="g-sidenav-show bg-gray-200">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/perfect-scrollbar/1.5.0/perfect-scrollbar.min.js"></script>
 
-    <!-- Main Content Area -->
-    <main>
-        {% block content %}
-        <!-- Child templates will fill in this section -->
-        {% endblock %}
-    </main>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <aside class="sidenav bg-gradient-dark">
+            <!-- Sidebar content -->
+        </aside>
+        <!-- End Sidebar -->
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2024 My Website</p>
-    </footer>
+        <main class="main-content border-radius-lg">
+            <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl">
+                <div class="container-fluid py-1 px-3">
+                    <h6 class="font-weight-bolder mb-0">{% block page_title %}Page Title{% endblock %}</h6>
+                </div>
+            <link></link>
+            </nav>
+            <div class="container-fluid py-4">
+                {% block content %}{% endblock %}
+            </div>
+        </main>
+    </div>
 
+    <!-- Core JS Files -->
+    <script src="{% static 'assets/js/core/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/core/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/material-dashboard.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/perfect-scrollbar.min.js' %}"></script>
+    <script src="{% static 'assets/js/plugins/smooth-scrollbar.min.js' %}"></script>
 </body>
+
 </html>

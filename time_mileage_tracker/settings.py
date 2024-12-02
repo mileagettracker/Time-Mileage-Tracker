@@ -25,20 +25,20 @@ SECRET_KEY = 'django-insecure-93x@)w(wnc22s)i74n)44ttt)kri7cr6m76tfoosu)wv%^ttx#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.1.139', 'localhost','127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    # Other apps...
+    'time_mileage_tracker',
+    'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',  # Ensure this appears only once
-    # Your custom apps...
 ]
 
 
@@ -128,3 +128,16 @@ STATICFILES_DIRS = [BASE_DIR / "static"]  # This includes your project-level 'st
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/dashboard/'
+
+
+
+# EMAIL CONFIG
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'notifications@thomp.site'
+EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = 'notifications@thomp.site'

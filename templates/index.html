@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
-
 {% block title %}Home{% endblock %}
+{% block page_title %}Home{% endblock %}
 
 {% block content %}
-<h1>Welcome to the Mileage Tracker App!</h1>
-<p>Track your time and mileage effectively.</p>
-<p><a href="/accounts/login/">Login</a> to start tracking your mileage.</p>
+<div class="row justify-content-center">
+    <div class="col-lg-6">
+        <div class="card text-center">
+            <div class="card-header bg-gradient-info">
+                <h4 class="card-title mb-0 text-white">Welcome to Time Mileage Tracker</h4>
+            </div>
+            <div class="card-body">
+                <p class="card-text">To access the dashboard, please log in.</p>
+                <a href="{% url 'login' %}" class="btn bg-gradient-info w-50 mt-3">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

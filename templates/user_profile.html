@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}User Profile{% endblock %}
+{% block page_title %}User Profile{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>User Profile</h2>
+    <p> Welcome, {{ user.username }}!</p>
+    <div class="row">
+        <div class="col-12 mb-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h4 class="card-title">Route History</h4>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="{% url 'dashboard' %}">
+                            Dashboard
+                        </a>
+                    </li>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table align-items-center mb-0">
+                            <thead>
+                                <tr>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Start Location</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">End Location</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Distance</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Duration</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Timestamp</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for route in user_routes %}
+                                <tr>
+                                    <td>{{ route.start_location }}</td>
+                                    <td>{{ route.end_location }}</td>
+                                    <td>{{ route.distance }} miles</td>
+                                    <td>{{ route.duration }} hours</td>
+                                    <td>{{ route.timestamp }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

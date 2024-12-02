@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+{% block page_title %}Dashboard Overview{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Dashboard Overview</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl-3 col-sm-6 mb-4">
+                        <div class="card">
+                            <div class="card-header p-3 pt-2">
+                                <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+                                    <i class="material-icons opacity-10">map</i>
+                                </div>
+                                <div class="text-end pt-1">
+                                    <p class="text-sm mb-0 text-capitalize">Navigation</p>
+                                    <h4 class="mb-0"> <a href ="{% url 'route.html' %}"> Click Here</a></h4>
+                                </div>
+                            </div>
+                            <hr class="dark horizontal my-0">
+                            <div class="card-footer p-3">
+                                <p class="mb-0">Access the navigation page</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add additional cards here -->
+                    <div class="col-xl-3 col-sm-6 mb-4">
+                        <div class="card">
+                            <div class="card-header p-3 pt-2">
+                                <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+                                    <i class="material-icons opacity-10">history</i>
+                                </div>
+                                <div class="text-end pt-1">
+                                    <p class="text-sm mb-0 text-capitalize">User Profile</p>
+                                    <h4 class="mb-0"><a href="{% url 'user_profile' %}">View History</a></h4>
+                                </div>
+                            </div>
+                            <hr class="dark horizontal my-0">
+                            <div class="card-footer p-3">
+                                <p class="mb-0">Access your activity history</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
