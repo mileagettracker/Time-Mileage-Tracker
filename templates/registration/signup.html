@@ -62,6 +62,12 @@
                                 </div>
                             </div>
                             <div class="card-body align-items-sm-center">
+                                {% if error %}
+<div class="alert alert-danger" role="alert">
+    {{ error }}
+</div>
+{% endif %}
+
                                 <form method="post">
                                     {% csrf_token %}
                                     <div class="form-floating mb-3">
