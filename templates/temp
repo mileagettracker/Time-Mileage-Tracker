@@ -17,3 +17,25 @@ def login_view(request):
         # Handle GET request: Display the login form
         form = AuthenticationForm()
     return render(request, 'registration/login.html', {'form': form})
+
+
+    def route_view(request):
+    if request.method == 'POST':
+        current_location = request.POST.get('current_location')
+        destination = request.POST.get('destination')
+        distance = request.POST.get('distance')
+        duration = request.POST.get('duration')
+        print("route_view")
+        print(f"Submitted Data: {current_location}, {destination}, {distance}, {duration}")
+
+
+        RouteLog.objects.create(
+            user=request.user,
+            start_location=current_location,
+            end_location=destination,
+            distance=float(distance),
+            duration=float(duration),
+        )
+        return JsonResponse({'status': 'success'})
+
+    return render(request, 'route.html')

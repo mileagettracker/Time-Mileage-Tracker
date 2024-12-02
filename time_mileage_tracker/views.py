@@ -9,7 +9,7 @@ from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.decorators import login_required
 import logging
 
-from .models import RouteLog
+from .models import RouteLog, Signup
 
 
 # def profile_view(request):
@@ -38,6 +38,11 @@ def route_view(request):
 
     return render(request, 'route.html')
 
+def user_profile(request):
+    user = request.user
+    route_logs = RouteLog.objects.filter(user=user)
+    return render(request, 'user_profile.html', {'route_logs': route_logs})
+
 def login_view(request):
     if request.method == 'POST':
         # Handle POST request: Process the login form data
@@ -48,7 +53,7 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('dashboard')  # Redirect to a home or dashboard page
+                return redirect('dashboard')  # Redirect to dashboard page
             else:
                 return HttpResponse("Invalid login")
         else:
@@ -64,7 +69,7 @@ def logout_view(request):
 
 
 def home_view(request):
-    return render(request, 'dashboard.html')  # Replace with your actual template
+    return render(request, 'dashboard.html')
 
 @login_required
 def user_view(request):
@@ -76,11 +81,15 @@ def signup_view(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             user = form.save()
-            user.first_name = form.cleaned_data.get('first_name')
-            user.last_name = form.cleaned_data.get('last_name')
-            user.save()
-            login(request, user)
-            return redirect('login')
+            Signup.objects.create(
+                user=request.user,
+                first_name=form.cleaned_data.get('first_name'),
+                last_name=form.cleaned_data.get('last_name'),
+                username=form.cleaned_data.get('username'),
+                email=form.cleaned_data.get('email'),
+                password=user.set_password,  # Password is already hashed
+            )
+            return redirect('login') # Redirect to login page
     else:
         form = CustomUserCreationForm()
     return render(request, 'registration/signup.html', {'form': form})
