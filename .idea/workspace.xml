@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edb232aa-7593-422c-b47d-50b869203597" name="Changes" comment="Added dashboard template and login page">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/28ac4116-d238-4e9c-bd8c-27c3f9a4cdc0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/28ac4116-d238-4e9c-bd8c-27c3f9a4cdc0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/28ac4116-d238-4e9c-bd8c-27c3f9a4cdc0/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/28ac4116-d238-4e9c-bd8c-27c3f9a4cdc0/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/572ab8f2-8335-4cbd-860d-f10f63821967.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/572ab8f2-8335-4cbd-860d-f10f63821967/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/route.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/route.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/time_mileage_tracker/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/time_mileage_tracker/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/time_mileage_tracker/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/time_mileage_tracker/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/time_mileage_tracker/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/time_mileage_tracker/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="requests" />
+        <entry key="$PROJECT_DIR$" value="Parth2.0" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -222,6 +221,7 @@
       <workItem from="1732912222170" duration="5058000" />
       <workItem from="1733100060255" duration="53000" />
       <workItem from="1733100123400" duration="2709000" />
+      <workItem from="1733171505280" duration="1890000" />
     </task>
     <task id="LOCAL-00001" summary="Added dashboard template and login page">
       <option name="closed" value="true" />
@@ -275,5 +275,6 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Time_Mileage_Tracker$manage.coverage" NAME="manage Coverage Results" MODIFIED="1729713775175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Time_Mileage_Tracker$settings.coverage" NAME="settings Coverage Results" MODIFIED="1732911765107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/time_mileage_tracker" />
+    <SUITE FILE_PATH="coverage/Time_Mileage_Tracker$views.coverage" NAME="views Coverage Results" MODIFIED="1733169494378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/time_mileage_tracker" />
   </component>
 </project>

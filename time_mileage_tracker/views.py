@@ -34,17 +34,15 @@ def route_view(request):
             distance=float(distance),
             duration=float(duration),
         )
-        return render(request, 'user_profile.html')
+        return redirect('user_profile')
 
     return render(request, 'route.html')
 
 @login_required
 def user_profile(request):
-    user_routes = RouteLog.objects.filter(user=request.user)
-    print(user_routes)
-    return render(request, 'user_profile.html', {'user_routes': user_routes})
-
-
+    route_logs = RouteLog.objects.all()
+    username = request.user.username
+    return render(request, 'user_profile.html', {'route_logs': route_logs, 'username': username})
 
 
 
@@ -76,10 +74,6 @@ def logout_view(request):
 def home_view(request):
     return render(request, 'dashboard.html')
 
-@login_required
-def user_view(request):
-    username = request.user.username
-    return render(request, 'user_profile.html', {'username': username})
 
 from django.contrib.auth.models import User
 from django.contrib.auth import login

@@ -8,7 +8,14 @@
 
 </head>
 <body>
-    <h1>Route Planner</h1>
+    <div class="card-header d-flex justify-content-between align-items-center">
+                    <h1 class="card-title">Route Planner</h1>
+                    <li class="nav-item">
+                        <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="{% url 'dashboard' %}">
+                            Dashboard
+                        </a>
+                    </li>
+                </div>
     <form id="routeForm" method="post">
         {% csrf_token %}
         <label for="current_location">Current Location:</label>
