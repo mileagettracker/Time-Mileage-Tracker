@@ -80,7 +80,9 @@ def about_view(request):
 @login_required
 @user_passes_test(lambda u: u.is_superuser)
 def employee_reports_view(request):
+    # get individual route logs
     route_logs = RouteLog.objects.all()
+
     return render(request, 'employee_reports.html', {'route_logs': route_logs})
 
 
