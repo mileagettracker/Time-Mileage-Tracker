@@ -31,13 +31,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for log in route_logs %}
+                                {% for route in user_routes %}
                                 <tr>
-                                    <td>{{ log.start_location }}</td>
-                                    <td>{{ log.end_location }}</td>
-                                    <td>{{ log.distance }} miles</td>
-                                    <td>{{ log.duration }} hours</td>
-                                    <td>{{ log.timestamp }}</td>
+                                    <td>{{ route.start_location }}</td>
+                                    <td>{{ route.end_location }}</td>
+                                    <td>{{ route.distance }} miles</td>
+                                    <td>{{ route.duration }} hours</td>
+                                    <td>{{ route.timestamp }}</td>
                                 </tr>
                                 {% endfor %}
                             </tbody>

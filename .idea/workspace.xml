@@ -5,16 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edb232aa-7593-422c-b47d-50b869203597" name="Changes" comment="Added dashboard template and login page">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/28ac4116-d238-4e9c-bd8c-27c3f9a4cdc0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/28ac4116-d238-4e9c-bd8c-27c3f9a4cdc0.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/28ac4116-d238-4e9c-bd8c-27c3f9a4cdc0/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/28ac4116-d238-4e9c-bd8c-27c3f9a4cdc0/storage_v2/_src_/schema/main.uQUzAA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/572ab8f2-8335-4cbd-860d-f10f63821967.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/572ab8f2-8335-4cbd-860d-f10f63821967/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/registration/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/registration/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/temp" beforeDir="false" afterPath="$PROJECT_DIR$/templates/temp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/user_profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/user_profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/time_mileage_tracker/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/time_mileage_tracker/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/time_mileage_tracker/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/time_mileage_tracker/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/time_mileage_tracker/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/time_mileage_tracker/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +88,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.query.execution&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -221,6 +220,8 @@
       <workItem from="1732654053627" duration="4000" />
       <workItem from="1732658478577" duration="1888000" />
       <workItem from="1732912222170" duration="5058000" />
+      <workItem from="1733100060255" duration="53000" />
+      <workItem from="1733100123400" duration="2709000" />
     </task>
     <task id="LOCAL-00001" summary="Added dashboard template and login page">
       <option name="closed" value="true" />

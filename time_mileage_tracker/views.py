@@ -34,14 +34,19 @@ def route_view(request):
             distance=float(distance),
             duration=float(duration),
         )
-        return JsonResponse({'status': 'success'})
+        return render(request, 'user_profile.html')
 
     return render(request, 'route.html')
 
+@login_required
 def user_profile(request):
-    user = request.user
-    route_logs = RouteLog.objects.filter(user=user)
-    return render(request, 'user_profile.html', {'route_logs': route_logs})
+    user_routes = RouteLog.objects.filter(user=request.user)
+    print(user_routes)
+    return render(request, 'user_profile.html', {'user_routes': user_routes})
+
+
+
+
 
 def login_view(request):
     if request.method == 'POST':
