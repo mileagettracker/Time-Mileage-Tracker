@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Employee Reports{% endblock %}
+{% block page_title %}Employee Reports{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card shadow-lg">
+            <div class="card-header bg-gradient-primary text-white">
+                <h4 class="font-weight-bolder mb-0">Employee Reports</h4>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table align-items-center mb-0">
+                        <thead>
+                            <tr>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Employee
+                                </th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                    Start Location
+                                </th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                    End Location
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Distance
+                                </th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                    Duration
+                                </th>
+                                <th class="text-secondary opacity-7"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for route_log in route_logs %}
+                            <tr>
+                                <td>
+                                    <div class="d-flex px-2 py-1">
+                                        <div>
+                                            <img src="{% static 'assets/img/team-2.jpg' %}" class="avatar avatar-sm me-3"
+                                                alt="user1">
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <h6 class="mb-0 text-sm">{{ route_log.user.username }}</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p class="text-sm font-weight-bold mb-0">{{ route_log.start_location }}</p>
+                                </td>
+                                <td>
+                                    <p class="text-sm font-weight-bold mb-0">{{ route_log.end_location }}</p>
+                                </td>
+                                <td class="align-middle text-center">
+                                    <span class="text-secondary text-sm font-weight-bold">{{ route_log.distance }} miles</span>
+                                </td>
+                                <td class="align-middle text-center">
+                                    <span class="text-secondary text-sm font-weight-bold">{{ route_log.duration }} hours</span>
+                                </td>
+                                <td class="align-middle">
+                                    <a href="{% url 'modify_report' route_log.id %}"
+                                        class="btn btn-info btn-sm px-3 mb-0">Edit</a>
+                                    <a href="{% url 'export_report' route_log.id %}"
+                                        class="btn btn-success btn-sm px-3 mb-0">Export PDF</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="row mt-4">
+    <div class="col-12">
+        <div class="card shadow-lg">
+            <div class="card-body">
+                <a href="{% url 'export_all_reports' %}" class="btn bg-gradient-primary">Export All Reports to PDF</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card shadow-lg">
+            <div class="card-header bg-gradient-primary text-white">
+                <h4 class="font-weight-bolder mb-0">Route Visualization(work in progress)</h4>
+            </div>
+            <div class="card-body">
+                <div id="map" style="height: 500px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+
+        const map = L.map('map').setView([0, 0], 3);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        const routeLogs = JSON.parse('{{ route_logs_json|escapejs }}');
+        routeLogs.forEach(routeLog => {
+            L.marker([routeLog.start_lat, routeLog.start_lon]).addTo(map)
+                .bindPopup(`Start: ${routeLog.start_location}`);
+            L.marker([routeLog.end_lat, routeLog.end_lon]).addTo(map)
+                .bindPopup(`End: ${routeLog.end_location}`);
+        });
+
+
+        const bounds = routeLogs.map(routeLog => [
+            [routeLog.start_lat, routeLog.start_lon],
+            [routeLog.end_lat, routeLog.end_lon],
+        ]);
+        map.fitBounds(bounds);
+    });
+</script>
+{% endblock %}
+
+
