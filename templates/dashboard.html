@@ -5,8 +5,8 @@
 {% block content %}
 <div class="row">
     <div class="col-12">
-        <div class="card">
-            <div class="card-header">
+        <div class="card shadow-lg">
+            <div class="card-header bg-gradient-info d-flex justify-content-between align-items-center text-white">
                 <h4 class="card-title">Dashboard Overview</h4>
             </div>
             <div class="card-body">
@@ -14,7 +14,7 @@
                     <div class="col-xl-3 col-sm-6 mb-4">
                         <div class="card">
                             <div class="card-header p-3 pt-2">
-                                <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+                                <div class="icon icon-lg icon-shape bg-gradient-info shadow-dark text-center border-radius-xl mt-n4 position-absolute">
                                     <i class="material-icons opacity-10">map</i>
                                 </div>
                                 <div class="text-end pt-1">
@@ -24,15 +24,14 @@
                             </div>
                             <hr class="dark horizontal my-0">
                             <div class="card-footer p-3">
-                                <p class="mb-0">Access the navigation page</p>
+                                <p class="mb-0">Access the Navigation Page</p>
                             </div>
                         </div>
                     </div>
-                    <!-- Add additional cards here -->
                     <div class="col-xl-3 col-sm-6 mb-4">
                         <div class="card">
                             <div class="card-header p-3 pt-2">
-                                <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+                                <div class="icon icon-lg icon-shape bg-gradient-info shadow-dark text-center border-radius-xl mt-n4 position-absolute">
                                     <i class="material-icons opacity-10">history</i>
                                 </div>
                                 <div class="text-end pt-1">
@@ -42,13 +41,47 @@
                             </div>
                             <hr class="dark horizontal my-0">
                             <div class="card-footer p-3">
-                                <p class="mb-0">Access your activity history</p>
+                                <p class="mb-0">Access your Activity History</p>
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 mb-4">
+                        <div class="card">
+                            <div class="card-header p-3 pt-2">
+                                <div class="icon icon-lg icon-shape bg-gradient-info shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+                                    <i class="material-icons opacity-10">person</i>
+                                </div>
+                                <div class="text-end pt-1">
+                                    <p class="text-sm mb-0 text-capitalize">Employee Reports</p>
+                                    <h4 class="mb-0"><a href="{% url 'employee_reports' %}">View Reports</a></h4>
+                                </div>
+                            </div>
+                                <hr class="dark horizontal my-0">
+                                <div class="card-footer p-3">
+                                    <p class="mb-0">Access Employee Reports</p>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-xl-3 col-sm-6 mb-4">
+                        <div class="card">
+                            <div class="card-header p-3 pt-2">
+                                <div class="icon icon-lg icon-shape bg-gradient-info shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+                                    <i class="material-icons opacity-10">info</i>
+                                </div>
+                                <div class="text-end pt-1">
+                                    <p class="text-sm mb-0 text-capitalize">About</p>
+                                    <h4 class="mb-0"><a href="{% url 'about' %}">Click Here</a></h4>
+                                </div>
+                            </div>
+                                <hr class="dark horizontal my-0">
+                                <div class="card-footer p-3">
+                                    <p class="mb-0">About Time Mileage Tracker</p>
+                                </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    </div>
 {% endblock %}

@@ -4,7 +4,7 @@ from django.urls import path
 from django.contrib.auth.views import LoginView
 from django.contrib.auth import views as auth_views
 
-from time_mileage_tracker.views import home_view, user_view
+from time_mileage_tracker.views import home_view, user_profile
 from . import views  # Assuming your views are in a views.py file
 
 from . import views
@@ -35,7 +35,7 @@ urlpatterns = [
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
 
-    path('user_profile/', user_view, name='user_profile'),
+    path('user_profile/', user_profile, name='user_profile'),
 
     # admin page
     path('report/', views.employee_reports_view, name='employee_reports'),
