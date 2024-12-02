@@ -13,7 +13,47 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/perfect-scrollbar/1.5.0/css/perfect-scrollbar.min.css" rel="stylesheet" />
     <link id="pagestyle" href="{% static 'assets/css/material-dashboard.css?v=3.1.0' %}" rel="stylesheet" />
 
+<style>
+   /* Remove outlines for input fields */
+.form-control {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+    transition: border-color 0.2s ease-in-out;
+}
+.form-control:hover {
+    border-bottom: 2px solid #999;
+}
 
+/* Change border color on focus */
+.form-control:focus {
+    border-bottom: 2px solid #007bff;
+    outline: none;
+    box-shadow: none;
+}
+
+/* Adjust floating label styles */
+.form-floating label {
+    position: absolute;
+    top: 0.75rem;
+    left: 0;
+    font-size: 1rem;
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.form-floating .form-control:focus ~ label,
+.form-floating .form-control:not(:placeholder-shown) ~ label {
+    top: -0.5rem;
+    font-size: 0.85rem;
+    color: #007bff;
+}
+
+
+</style>
 </head>
 
 <body class="g-sidenav-show bg-gray-200">

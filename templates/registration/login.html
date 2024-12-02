@@ -43,6 +43,7 @@
       </div>
     </div>
   </div>
+   
   <main class="main-content  mt-0">
     <div class="page-header align-items-sm-center min-vh-100" style="background-image: url('https://img.freepik.com/free-vector/modern-world-map-background_1035-7605.jpg?t=st=1729531106~exp=1729534706~hmac=ece18c92f025d2c85883d39dc1738c1908838e9274dc351f1d4a4dbe07116e2c&w=996');">
       <span class="mask bg-gradient-dark opacity-6"></span>
@@ -58,14 +59,19 @@
               <div class="card-body align-items-sm-center">
                 <form method="post">
                    {% csrf_token %}
-                  <div class="input-group input-group-outline mb-3">
-                    <label class="form-label">Username</label>
-                    <input type="text" name = "username" class="form-control" onfocus="hideLabel(this)" onblur="showLabel(this)">
-                  </div>
-                  <div class="input-group input-group-outline mb-3">
-                    <label class="form-label">Password</label>
-                    <input type="password" name= "password" class="form-control" onfocus="hideLabel(this)" onblur="showLabel(this)">
-                  </div>
+                 <div class="form-floating mb-3">
+    <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+    <label for="username">Username</label>
+</div>
+
+<div class="form-floating mb-3">
+    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+    <label for="password">Password</label>
+</div>
+
+
+
+
                   <div class="form-check form-switch d-flex align-items-center mb-3">
                     <input class="form-check-input" type="checkbox" id="rememberMe">
                     <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
