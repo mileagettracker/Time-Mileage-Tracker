@@ -1,21 +1,14 @@
 import os.path
 
-from django.shortcuts import render
-from django.contrib.auth import login, logout
+from django.contrib.auth import login, logout,authenticate
 from django.http import HttpResponseRedirect, FileResponse, Http404
 from django.conf import settings
 from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib.auth import authenticate, login
 from django.contrib.auth.forms import AuthenticationForm
-from .forms import CustomUserCreationForm
+from django.contrib import messages
+
+from django.views import View
 from django.http import HttpResponse, JsonResponse  
-from django.contrib.auth.decorators import login_required
-import logging
-
-from .models import RouteLog, Signup
-
-from django.http import HttpResponse
-from django.http import JsonResponse
 import logging
 from reportlab.lib.pagesizes import letter
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
@@ -89,23 +82,47 @@ def home_view(request):
 
     return render(request, 'dashboard.html')
 
+from django.contrib.auth.models import User
+from django.contrib.auth import login
+from django.shortcuts import render, redirect
+
 def signup_view(request):
     if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            Signup.objects.create(
-                user=request.user,
-                first_name=form.cleaned_data.get('first_name'),
-                last_name=form.cleaned_data.get('last_name'),
-                username=form.cleaned_data.get('username'),
-                email=form.cleaned_data.get('email'),
-                password=user.set_password,  # Password is already hashed
-            )
-            return redirect('login') # Redirect to login page
-    else:
-        form = CustomUserCreationForm()
-    return render(request, 'registration/signup.html', {'form': form})
+        # Get form data from POST request
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('last_name')
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        password2 = request.POST.get('password2')
+
+        # Check if passwords match
+        if password != password2:
+            return render(request, 'registration/signup.html', {
+                'error': 'Passwords do not match'
+            })
+
+        # Check if username is already taken
+        if User.objects.filter(username=username).exists():
+            return render(request, 'registration/signup.html', {
+                'error': 'Username is already taken'
+            })
+
+        # Create the user
+        user = User.objects.create_user(
+            username=username,
+            password=password,
+            first_name=first_name,
+            last_name=last_name
+        )
+        user.save()
+
+        # Log the user in after successful sign-up
+        login(request, user)
+
+        # Redirect to a dashboard or home page
+        return redirect('dashboard')  # Replace 'dashboard' with your actual view name
+
+    return render(request, 'registration/signup.html')
 
 
 def about_view(request):
@@ -208,4 +225,26 @@ def download_file(request, file_name):
         raise Http404("File not found")
 
 
+class CustomLoginView(View):
+    def get(self, request):
+        return render(request, 'registration/login.html')
 
+    def post(self, request):
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            # User is valid; log them in
+            login(request, user)
+            return redirect('dashboard')  # Replace with your desired success page
+        else:
+            # Check if the username exists
+            from django.contrib.auth.models import User
+            if not User.objects.filter(username=username).exists():
+                messages.error(request, "Username not found.")
+            else:
+                messages.error(request, "Invalid password.")
+
+        return render(request, 'registration/login.html')

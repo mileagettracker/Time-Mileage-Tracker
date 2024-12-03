@@ -11,20 +11,17 @@ class RouteLog(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
 
-class Signup(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=255)
-    last_name = models.CharField(max_length=255)
-    username = models.CharField(max_length=255)
-    email = models.EmailField()
-    password = models.CharField(max_length=255)
+# class Signup(models.Model):
+#     user = models.ForeignKey(User, on_delete=models.CASCADE)
+#     first_name = models.CharField(max_length=255)
+#     last_name = models.CharField(max_length=255)
+#     username = models.CharField(max_length=255)
+#     email = models.EmailField()
+#     password = models.CharField(max_length=255)
 
 
     def __str__(self):
         return f"{self.user.username}: {self.start_location} -> {self.end_location}"
 
-
-    def __str__(self):
-        return f"{self.user.username}: {self.start_location} -> {self.end_location}"
 
 

@@ -47,7 +47,7 @@
         </div>
     </div>
     <main class="main-content  mt-0">
-        <div class="page-header bg-gradient-info h-100 m-3 px-7 border-radius-lg d-flex flex-column justify-content-center min-vh-100"
+        <div class="page-header bg-gradient-info h-100 m-3 border-radius-lg d-flex flex-column justify-content-center min-vh-100"
              style="background-image: url('https://img.freepik.com/free-vector/modern-world-map-background_1035-7605.jpg?t=st=1729531106~exp=1729534706~hmac=ece18c92f025d2c85883d39dc1738c1908838e9274dc351f1d4a4dbe07116e2c&w=996'); background-size: cover;">
             <span class="mask bg-gradient-dark opacity-6"></span>
             <div class="container my-auto">
@@ -63,10 +63,10 @@
                             </div>
                             <div class="card-body align-items-sm-center">
                                 {% if error %}
-<div class="alert alert-danger" role="alert">
-    {{ error }}
-</div>
-{% endif %}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ error }}
+                                    </div>
+                                {% endif %}
 
                                 <form method="post">
                                     {% csrf_token %}
@@ -75,7 +75,7 @@
                                                placeholder="First Name">
                                         <label for="first_name">First Name</label>
                                     </div>
-                                     <div class="form-floating mb-3">
+                                    <div class="form-floating mb-3">
                                         <input type="text" class="form-control" id="last_name" name="last_name"
                                                placeholder="Last Name">
                                         <label for="last_name">Last Name</label>
@@ -91,7 +91,7 @@
                                                placeholder="Password">
                                         <label for="password">Password</label>
                                     </div>
-                                     <div class="form-floating mb-3">
+                                    <div class="form-floating mb-3">
                                         <input type="password" class="form-control" id="password2" name="password2"
                                                placeholder="Confirm Password">
                                         <label for="password2">Confirm Password</label>
