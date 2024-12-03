@@ -57,8 +57,17 @@
                 </div>
               </div>
               <div class="card-body align-items-sm-center">
+                 
                 <form method="post">
                    {% csrf_token %}
+                    <!-- Display error messages -->
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
                  <div class="form-floating mb-3">
     <input type="text" class="form-control" id="username" name="username" placeholder="Username">
     <label for="username">Username</label>
