@@ -29,7 +29,6 @@ def route_view(request):
         destination = request.POST.get('destination')
         distance = request.POST.get('distance')
         duration = request.POST.get('duration')
-        print("route_view")
         print(f"Submitted Data: {current_location}, {destination}, {distance}, {duration}")
 
         RouteLog.objects.create(
@@ -40,8 +39,7 @@ def route_view(request):
             duration=float(duration),
         )
 
-        return render(request, 'user_profile.html')
-
+        return redirect('user_profile')
     return render(request, 'route.html')
 
 @login_required
@@ -79,8 +77,10 @@ def logout_view(request):
 
 
 def home_view(request):
-
-    return render(request, 'dashboard.html')
+    context = {
+        'is_superuser': request.user.is_superuser,
+    }
+    return render(request, 'dashboard.html', context)
 
 from django.contrib.auth.models import User
 from django.contrib.auth import login
