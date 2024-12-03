@@ -9,14 +9,12 @@
     <p> Welcome, {{ user.username }}!</p>
     <div class="row">
         <div class="col-12 mb-4">
-            <div class="card">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h4 class="card-title">Route History</h4>
-                    <li class="nav-item">
-                        <a class="nav-link d-flex align-items-center me-2 active" aria-current="page" href="{% url 'dashboard' %}">
+            <div class="card shadow-lg">
+                <div class="card-header bg-gradient-info text-white d-flex justify-content-between align-items-center">
+                    <h4 class="card-title text-white">Route History</h4>
+                        <a class="nav-link d-flex text-white align-items-center me-2 active" aria-current="page" href="{% url 'dashboard' %}">
                             Dashboard
                         </a>
-                    </li>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">

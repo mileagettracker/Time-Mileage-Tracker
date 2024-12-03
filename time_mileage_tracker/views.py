@@ -53,9 +53,9 @@ def route_view(request):
 
 @login_required
 def user_profile(request):
+    username = request.user.username
     user_routes = RouteLog.objects.filter(user=request.user)
-    print(user_routes)
-    return render(request, 'user_profile.html', {'user_routes': user_routes})
+    return render(request, 'user_profile.html', {'user_routes': user_routes, 'username': username})
 
 
 
@@ -88,11 +88,6 @@ def logout_view(request):
 def home_view(request):
 
     return render(request, 'dashboard.html')
-
-@login_required
-def user_view(request):
-    username = request.user.username
-    return render(request, 'user_profile.html', {'username': username})
 
 def signup_view(request):
     if request.method == 'POST':
