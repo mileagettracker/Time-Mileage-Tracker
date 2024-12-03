@@ -13,7 +13,42 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/perfect-scrollbar/1.5.0/css/perfect-scrollbar.min.css" rel="stylesheet" />
     <link id="pagestyle" href="{% static 'assets/css/material-dashboard.css?v=3.1.0' %}" rel="stylesheet" />
 
+<style>
+    /* Center the form and add spacing */
+form {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 400px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
+/* Input field styling */
+.form-floating input {
+    padding: 12px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+/* Fix button styling */
+form button {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+form button:hover {
+    background: linear-gradient(90deg, #0056b3, #003580);
+}
+
+</style>
 </head>
 
 <body class="g-sidenav-show bg-gray-200">
@@ -45,6 +80,12 @@
     <script src="{% static 'assets/js/material-dashboard.js' %}"></script>
     <script src="{% static 'assets/js/plugins/perfect-scrollbar.min.js' %}"></script>
     <script src="{% static 'assets/js/plugins/smooth-scrollbar.min.js' %}"></script>
+<footer class="footer bg-gradient-dark text-center py-3">
+    <a href="https://github.com/mileagettracker/Time-Mileage-Tracker" target="_blank" class="text-white">
+        <i class="bi bi-github"></i> View this project on GitHub
+    </a>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</footer>
 </body>
 
 </html>
