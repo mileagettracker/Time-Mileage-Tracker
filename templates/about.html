@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 
 <html lang="en">
 <head>
@@ -6,6 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+<style>
+    img{
+        width: 100px;
+        padding: 10px;
+    }
+</style>
+
 </head>
 <body>
     <div class="container my-5">
@@ -21,11 +29,16 @@
                         </a>
                     </div>
                     <div class="card-body">
-                        <p>Project Name: SP-6 Red Time Mileage Tracker with GPS</p>
+                        <h6>Project Name: SP-6 Red Time Mileage Tracker with GPS</h6>
+                        <img size="1px" src="{% static 'assets/img/pfp/david.jpg' %}" alt="David Lowe">
                         <p>Project Lead: David Lowe</p>
+                        <img size="1px" src="{% static 'assets/img/pfp/lloyd.jpg' %}" alt="Lloyd Anderson">
                         <p>Documentation: Lloyd Anderson</p>
+                        <img size="1px" src="{% static 'assets/img/pfp/ryan.png' %}" alt="Ryan Thompson (lead programmer)">
                         <p>Programmer: Ryan Thompson</p>
+                        <img size="1px" src="{% static 'assets/img/pfp/parth.jpg' %}" alt="Parth Patel">
                         <p>Programmer: Parth Patel</p>
+                        <img size="1px" src="{% static 'assets/img/pfp/beto.jpg' %}" alt="Humberto Aguilar Sanchez">
                         <p>Programmer: Humberto Aguilar Sanchez</p>
                         <p>Start Date: August 31, 2024</p>
                         <p>End Date: December 2, 2024</p>
@@ -47,14 +60,14 @@
                              <a target="_blank" href="{% url 'download_file' 'project_plan.pdf' %}">Project Plan</a>
 
                             </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="{% url 'download_file' 'project_design.pdf' %}">Project Design Document</a>
-
-    </li>
-    <li class="list-group-item d-flex justify-content-between align-items-center">
-        <a href="{% url 'download_file' 'project_STP-STR.pdf' %}">Project STP-STR</a>
-    </li>
-</ul>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="{% url 'download_file' 'project_design.pdf' %}">Project Design Document</a>
+                        
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <a href="{% url 'download_file' 'project_STP-STR.pdf' %}">Project STP-STR</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
