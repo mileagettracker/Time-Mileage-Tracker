@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.shortcuts import render
 from django.urls import path
-from django.contrib.auth.views import LoginView
+from .views import CustomLoginView
 from django.contrib.auth import views as auth_views
 
 from time_mileage_tracker.views import home_view, user_profile
@@ -24,7 +24,7 @@ urlpatterns = [
 
     path('dashboard/', views.home_view, name='dashboard'),  # Root URL points to the index view
 
-    path('login/', LoginView.as_view(), name='login'),
+    path('login/', CustomLoginView.as_view(), name='login'),
     path('signup/', views.signup_view, name='signup'),
     path('route/', views.route_view, name='route.html'),
 
